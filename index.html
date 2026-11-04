@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bug Report Router</title>
+  <style>
+    body { font: 1rem/1.5 system-ui; max-width: 42rem; margin: 3rem auto; padding: 0 1rem; color: #172b36; }
+    textarea { display: block; width: 100%; box-sizing: border-box; margin: .5rem 0 1rem; font: inherit; }
+    button, select { font: inherit; padding: .4rem .6rem; }
+    section { margin-top: 1.5rem; padding: .25rem 1rem; border-left: 4px solid #247074; background: #f0f7f7; }
+  </style>
+</head>
+<body>
+  <h1>Bug Report Router</h1>
+  <p>Find a first troubleshooting checklist before opening a software issue. The text stays in this browser.</p>
+  <form id="report">
+    <label for="summary">What happened?</label>
+    <textarea id="summary" rows="5" maxlength="1500" required placeholder="For example: I installed the tool, but the terminal says the command was not found."></textarea>
+    <button>Suggest a checklist</button>
+  </form>
+  <section aria-label="Routing result">
+    <p id="result" role="status">Enter a symptom to get started.</p>
+    <label for="queue">Choose or override the checklist</label>
+    <select id="queue">
+      <option value="">Choose a checklist</option>
+      <option value="setup">Setup</option>
+      <option value="build">Build</option>
+      <option value="runtime">Runtime</option>
+      <option value="documentation">Documentation</option>
+    </select>
+    <ol id="checklist"></ol>
+  </section>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

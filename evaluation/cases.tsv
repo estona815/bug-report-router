@@ -1,0 +1,32 @@
+setup	I finished the installer but the command is still missing in my terminal.
+setup	The guide is fine, but I get permission denied during installation.
+setup	The shell cannot locate the tool after I added its folder to PATH.
+setup	The executable is missing from the environment on a fresh machine.
+setup	The project will not start because a dependency was never installed.
+setup	On a clean laptop the package manager refuses to install the required package.
+build	The linker fails while compiling the release target.
+build	The README instructions work until the compiler throws a type error.
+build	The app never launches because compilation fails in the bundler.
+build	The build completes but leaves out the generated artifact.
+build	A module import resolves in the editor but the bundler rejects it.
+build	The compiler cannot parse this file after the latest merge.
+runtime	The server is running but my request times out after pressing save.
+runtime	The build succeeds but the app freezes when I click the settings button.
+runtime	The process exits when I open the second screen.
+runtime	The application returns the wrong value only while the server is running.
+runtime	The save button returns an exception after launch.
+runtime	The compiled app opens normally and crashes during export.
+documentation	The tutorial example uses an option removed from the latest release.
+documentation	Nothing crashes, but the README tells readers to open a link that is broken.
+documentation	The package installs fine but the setup guide omits a prerequisite step.
+documentation	The guide says to select one option and its example selects another.
+documentation	The README shows an outdated import that contradicts the current docs.
+documentation	The command runs as expected but the instructions have a typo.
+abstain	It does not work.
+abstain	Fix it please.
+abstain	Should this be in the other repository?
+abstain	Sometimes something goes wrong, but I cannot say when.
+abstain	Both the installer and the compiler fail and I do not know which happened first.
+abstain	The app crashes and the tutorial link is broken. These are separate problems.
+abstain	I did not run the installer, the build, or the app yet.
+abstain	I have no reproduction or error message yet.

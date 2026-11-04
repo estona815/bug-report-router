@@ -1,0 +1,314 @@
+{
+  "count": 32,
+  "model": {
+    "correctRoutes": 20,
+    "wrongRoutes": 0,
+    "abstainedOnClear": 4,
+    "correctAbstentions": 8,
+    "routedAmbiguous": 0,
+    "perLabel": {
+      "setup": {
+        "setup": 5,
+        "abstain": 1
+      },
+      "build": {
+        "build": 4,
+        "abstain": 2
+      },
+      "runtime": {
+        "runtime": 6
+      },
+      "documentation": {
+        "documentation": 5,
+        "abstain": 1
+      },
+      "abstain": {
+        "abstain": 8
+      }
+    }
+  },
+  "baseline": {
+    "correctRoutes": 2,
+    "wrongRoutes": 1,
+    "abstainedOnClear": 21,
+    "correctAbstentions": 7,
+    "routedAmbiguous": 1,
+    "perLabel": {
+      "setup": {
+        "abstain": 5,
+        "setup": 1
+      },
+      "build": {
+        "abstain": 5,
+        "build": 1
+      },
+      "runtime": {
+        "abstain": 5,
+        "build": 1
+      },
+      "documentation": {
+        "abstain": 6
+      },
+      "abstain": {
+        "abstain": 7,
+        "build": 1
+      }
+    }
+  },
+  "trainingKeywords": {
+    "correctRoutes": 21,
+    "wrongRoutes": 1,
+    "abstainedOnClear": 2,
+    "correctAbstentions": 4,
+    "routedAmbiguous": 4,
+    "perLabel": {
+      "setup": {
+        "setup": 5,
+        "abstain": 1
+      },
+      "build": {
+        "build": 5,
+        "abstain": 1
+      },
+      "runtime": {
+        "runtime": 6
+      },
+      "documentation": {
+        "documentation": 5,
+        "setup": 1
+      },
+      "abstain": {
+        "abstain": 4,
+        "runtime": 1,
+        "setup": 2,
+        "documentation": 1
+      }
+    }
+  },
+  "cases": [
+    {
+      "expected": "setup",
+      "report": "I finished the installer but the command is still missing in my terminal.",
+      "model": "setup",
+      "baseline": "abstain",
+      "trainingKeywords": "setup"
+    },
+    {
+      "expected": "setup",
+      "report": "The guide is fine, but I get permission denied during installation.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "setup"
+    },
+    {
+      "expected": "setup",
+      "report": "The shell cannot locate the tool after I added its folder to PATH.",
+      "model": "setup",
+      "baseline": "abstain",
+      "trainingKeywords": "abstain"
+    },
+    {
+      "expected": "setup",
+      "report": "The executable is missing from the environment on a fresh machine.",
+      "model": "setup",
+      "baseline": "abstain",
+      "trainingKeywords": "setup"
+    },
+    {
+      "expected": "setup",
+      "report": "The project will not start because a dependency was never installed.",
+      "model": "setup",
+      "baseline": "abstain",
+      "trainingKeywords": "setup"
+    },
+    {
+      "expected": "setup",
+      "report": "On a clean laptop the package manager refuses to install the required package.",
+      "model": "setup",
+      "baseline": "setup",
+      "trainingKeywords": "setup"
+    },
+    {
+      "expected": "build",
+      "report": "The linker fails while compiling the release target.",
+      "model": "build",
+      "baseline": "abstain",
+      "trainingKeywords": "build"
+    },
+    {
+      "expected": "build",
+      "report": "The README instructions work until the compiler throws a type error.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "build"
+    },
+    {
+      "expected": "build",
+      "report": "The app never launches because compilation fails in the bundler.",
+      "model": "build",
+      "baseline": "abstain",
+      "trainingKeywords": "build"
+    },
+    {
+      "expected": "build",
+      "report": "The build completes but leaves out the generated artifact.",
+      "model": "build",
+      "baseline": "build",
+      "trainingKeywords": "build"
+    },
+    {
+      "expected": "build",
+      "report": "A module import resolves in the editor but the bundler rejects it.",
+      "model": "build",
+      "baseline": "abstain",
+      "trainingKeywords": "build"
+    },
+    {
+      "expected": "build",
+      "report": "The compiler cannot parse this file after the latest merge.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "abstain"
+    },
+    {
+      "expected": "runtime",
+      "report": "The server is running but my request times out after pressing save.",
+      "model": "runtime",
+      "baseline": "abstain",
+      "trainingKeywords": "runtime"
+    },
+    {
+      "expected": "runtime",
+      "report": "The build succeeds but the app freezes when I click the settings button.",
+      "model": "runtime",
+      "baseline": "build",
+      "trainingKeywords": "runtime"
+    },
+    {
+      "expected": "runtime",
+      "report": "The process exits when I open the second screen.",
+      "model": "runtime",
+      "baseline": "abstain",
+      "trainingKeywords": "runtime"
+    },
+    {
+      "expected": "runtime",
+      "report": "The application returns the wrong value only while the server is running.",
+      "model": "runtime",
+      "baseline": "abstain",
+      "trainingKeywords": "runtime"
+    },
+    {
+      "expected": "runtime",
+      "report": "The save button returns an exception after launch.",
+      "model": "runtime",
+      "baseline": "abstain",
+      "trainingKeywords": "runtime"
+    },
+    {
+      "expected": "runtime",
+      "report": "The compiled app opens normally and crashes during export.",
+      "model": "runtime",
+      "baseline": "abstain",
+      "trainingKeywords": "runtime"
+    },
+    {
+      "expected": "documentation",
+      "report": "The tutorial example uses an option removed from the latest release.",
+      "model": "documentation",
+      "baseline": "abstain",
+      "trainingKeywords": "documentation"
+    },
+    {
+      "expected": "documentation",
+      "report": "Nothing crashes, but the README tells readers to open a link that is broken.",
+      "model": "documentation",
+      "baseline": "abstain",
+      "trainingKeywords": "documentation"
+    },
+    {
+      "expected": "documentation",
+      "report": "The package installs fine but the setup guide omits a prerequisite step.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "setup"
+    },
+    {
+      "expected": "documentation",
+      "report": "The guide says to select one option and its example selects another.",
+      "model": "documentation",
+      "baseline": "abstain",
+      "trainingKeywords": "documentation"
+    },
+    {
+      "expected": "documentation",
+      "report": "The README shows an outdated import that contradicts the current docs.",
+      "model": "documentation",
+      "baseline": "abstain",
+      "trainingKeywords": "documentation"
+    },
+    {
+      "expected": "documentation",
+      "report": "The command runs as expected but the instructions have a typo.",
+      "model": "documentation",
+      "baseline": "abstain",
+      "trainingKeywords": "documentation"
+    },
+    {
+      "expected": "abstain",
+      "report": "It does not work.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "abstain"
+    },
+    {
+      "expected": "abstain",
+      "report": "Fix it please.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "abstain"
+    },
+    {
+      "expected": "abstain",
+      "report": "Should this be in the other repository?",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "abstain"
+    },
+    {
+      "expected": "abstain",
+      "report": "Sometimes something goes wrong, but I cannot say when.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "runtime"
+    },
+    {
+      "expected": "abstain",
+      "report": "Both the installer and the compiler fail and I do not know which happened first.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "setup"
+    },
+    {
+      "expected": "abstain",
+      "report": "The app crashes and the tutorial link is broken. These are separate problems.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "documentation"
+    },
+    {
+      "expected": "abstain",
+      "report": "I did not run the installer, the build, or the app yet.",
+      "model": "abstain",
+      "baseline": "build",
+      "trainingKeywords": "setup"
+    },
+    {
+      "expected": "abstain",
+      "report": "I have no reproduction or error message yet.",
+      "model": "abstain",
+      "baseline": "abstain",
+      "trainingKeywords": "abstain"
+    }
+  ]
+}
