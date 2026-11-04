@@ -45,7 +45,11 @@ const models = Object.entries(queues).map(([queue, { examples }]) => {
 const vocabulary = new Set(models.flatMap(model => [...model.counts.keys()]));
 
 export function suggest(text) {
-  const words = [...new Set(meaningful(text))].filter(word => vocabulary.has(word));
+  // Explicit denials are not evidence for that symptom. Retain ordinary
+  // failure descriptions such as "command not found".
+  const positiveClauses = text.toLowerCase().split(/[.!?;]|\b(?:but|however|instead)\b/)
+    .map(clause => clause.split(/\b(?:no|without|not an?|not the)\b/, 1)[0]);
+  const words = [...new Set(positiveClauses.flatMap(meaningful))].filter(word => vocabulary.has(word));
   if (words.length < 2) return null;
 
   const scoreWord = (model, word) => Math.log(

@@ -4,7 +4,7 @@ A local prototype for first-time open-source contributors. It suggests a startin
 
 Run `python3 -m http.server 8878 --bind 127.0.0.1` from this directory, then open http://127.0.0.1:8878/. There are no runtime packages, remote model calls, or accounts.
 
-The browser trains a small multinomial Naive Bayes classifier from the original synthetic examples in `router.mjs`. Only known terms contribute to a suggestion. When fewer than two distinct known terms match or the top two scores are close, the model abstains. The UI shows terms that contributed in favor of the suggested queue. It does not estimate calibrated probability. Negation and unfamiliar project vocabulary can confuse it.
+The browser trains a small multinomial Naive Bayes classifier from the original synthetic examples in `router.mjs`. Only known terms contribute to a suggestion. When fewer than two distinct known terms match or the top two scores are close, the model abstains. The UI shows terms that contributed in favor of the suggested queue. It does not estimate calibrated probability. The model ignores terms after a few explicit denial patterns within a clause. Other negation patterns and unfamiliar project vocabulary can still confuse it. Run `node --test evaluation/negation.test.mjs` for the targeted regression cases.
 
 OpenAI Codex assisted the concept, implementation, and local checks. The examples use synthetic reports and no third-party dataset. The app does not create issues, execute commands, persist descriptions, or transmit them.
 
