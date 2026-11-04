@@ -8,7 +8,16 @@ The browser trains a small multinomial Naive Bayes classifier from the original 
 
 OpenAI Codex assisted the concept, implementation, and local checks. The examples use synthetic reports and no third-party dataset. The app does not create issues, execute commands, persist descriptions, or transmit them.
 
-## Demo and evaluation
+## Replay the demo
+
+Open the [live app](https://estona815.github.io/bug-report-router/) or watch the [captioned walkthrough](https://github.com/estona815/bug-report-router/releases/tag/first-ai-app-2026-demo).
+
+1. Paste `The compiler reports a syntax error in the generated artifact.` and select **Suggest a checklist**. The app suggests **Build**, shows matching words, and displays three steps.
+2. Replace the text with `It does not work.` and ask again. The app asks for a concrete symptom and clears the previous checklist.
+3. Select **Runtime** manually. The app attributes the choice to you and displays the Runtime checklist.
+4. Try `No syntax error or linker failure.` and ask again. The app defers instead of treating the denied symptoms as a Build report.
+
+## Evaluation
 
 See the browser's [build suggestion](demo/01-build-suggestion.png), [request for a concrete symptom](demo/02-asks-for-symptom.png), and [manual runtime selection](demo/03-manual-override.png).
 
